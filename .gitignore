@@ -1,28 +1,9 @@
-# Node modules
-/node_modules/
-
-# Build output
-/dist/
-
-# Environment variables
+node_modules
+dist
 .env
-.env.local
-.env.*.local
-
-# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-
-# OS files
 .DS_Store
 Thumbs.db
-
-# IDE files (optional)
-.vscode/
-.idea/
-
-# Temporary files
-*.tmp
-*.swp
+.vscode

@@ -5,6 +5,7 @@ import { AuthRoute } from './app/models/auth/auth.routes.js';
 import { ActivityRoute } from './app/models/activity/activity.routes.js';
 import { TourRouter } from './app/models/tour/tour.routes.js';
 import { DesRouter } from './app/models/destination/destination.routes.js';
+import { BookingRoutes } from './app/models/booking/booking.routes.js';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use('/api/auth', AuthRoute);
 app.use('/api/activity', ActivityRoute);
 app.use('/api/tour', TourRouter);
 app.use('/api/destination', DesRouter);
+app.use('/api/booking', BookingRoutes);
 
 // -------------------- DEFAULT ROUTE --------------------
 app.get('/', (req, res) => {
