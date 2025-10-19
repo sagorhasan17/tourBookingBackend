@@ -4,7 +4,6 @@ import { UserModel } from "./user.model.js";
 
 const CreateUserService = async(payLoad: IUser) =>{
     const user = await UserModel.create(payLoad)
-    
     return user
 }
 
