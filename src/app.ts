@@ -8,10 +8,8 @@ import { BookingRoutes } from './app/models/booking/booking.routes.js';
 import { UserRoutes } from './app/models/user/user.routes.js';
 
 dotenv.config();
+const app= express();
 
-const app: Application = express();
-
-// -------------------- MIDDLEWARE --------------------
 // JSON body parser --need for req.body
 app.use(express.json());
 

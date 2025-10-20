@@ -15,7 +15,22 @@ const CreateTourController = async (req: Request, res: Response) => {
     console.log(error);
   }
 };
+//for get data 
+const GetTourController = async (req: Request, res: Response) => {
+  try {
+    const tour = await TourService.GetTourService();
+    res.status(200).json({
+      success: true,
+      status: 'success',
+      message: 'get data successfully',
+      data: tour,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const TourController = {
-  CreateTourController
+  CreateTourController,
+  GetTourController
 } 

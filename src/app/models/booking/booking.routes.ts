@@ -1,4 +1,3 @@
-
 import exprss from 'express';
 import { BookingController } from './booking.controller.js';
 
