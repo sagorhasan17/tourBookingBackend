@@ -9,7 +9,7 @@ const CreateTourService = async (payLoad: ITour) => {
 const GetTourService = async () => {
   const tour = await TourModel.find()
     .populate('destination')
-    .populate('activities');
+    .populate('activities')
   return tour;
 };
 

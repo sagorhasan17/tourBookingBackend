@@ -1,10 +1,9 @@
-import type { Request, Response } from "express";
-import { TourService } from "./tour.services.js";
-
+import type { Request, Response } from 'express';
+import { TourService } from './tour.services.js';
 
 const CreateTourController = async (req: Request, res: Response) => {
   try {
-    const tour = await TourService.CreateTourService(req.body)
+    const tour = await TourService.CreateTourService(req.body);
     res.status(201).json({
       success: true,
       status: 'success',
@@ -15,7 +14,7 @@ const CreateTourController = async (req: Request, res: Response) => {
     console.log(error);
   }
 };
-//for get data 
+//for get data
 const GetTourController = async (req: Request, res: Response) => {
   try {
     const tour = await TourService.GetTourService();
@@ -32,5 +31,5 @@ const GetTourController = async (req: Request, res: Response) => {
 
 export const TourController = {
   CreateTourController,
-  GetTourController
-} 
+  GetTourController,
+};
