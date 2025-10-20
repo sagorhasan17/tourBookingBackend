@@ -1,12 +1,11 @@
-import type { Types } from 'mongoose';
-
-export interface IUser{
-    userId: String;
-    name: String;
-    email: String;
-    password: String;
-    phone: String;
-    role: 'admin' | 'customer';
-    createdAt: Date;
-    isDeleted: String;
+import { model, Schema, trusted } from 'mongoose';
+export interface IUser {
+  userId: string;
+  name: string;
+  email: string;
+  password: string;
+  phone: string;
+  role: 'admin' | 'customer';
+  createdAt?: Date;
+  isDeleted: boolean;
 }

@@ -1,14 +1,15 @@
-import { model, Schema, type Types } from 'mongoose';
+import { model, Schema, trusted } from 'mongoose';
 import type { IUser } from './user.interface.js';
 
-const createModelSchema = new Schema<IUser>({
-    userId: {type: String, required: true},
-    name: {type: String, require: true},
-    password: {type: String, required: true},
-    phone: {type: String, require: true},
-    role: {type: String, enum: ['admin', 'customer'], required: true},
-    createdAt: {type: Date,},
-    isDeleted: {type: Boolean, required: true}
-})
+const createUserSchema = new Schema<IUser>({
+  userId: { type: String, required: true },
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true },
+  phone: { type: String, required: true },
+  role: { type: String, enum: ['admin', 'customer'], required: true },
+  createdAt: { type: Date, default: Date.now },
+  isDeleted: { type: Boolean, required: true, default: false },
+});
 
-export const UserModel = model<IUser>("User", createModelSchema);
+export const UserModel = model<IUser>('User', createUserSchema);
