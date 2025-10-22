@@ -14,9 +14,7 @@ const app = express();
 app.use(express.json());
 
 // -------------------- ROUTES --------------------
-
 app.use('/api/user', UserRoutes);
-app.use('/api/login', AuthRoute);
 app.use('/api/auth', AuthRoute);
 app.use('/api/activity', ActivityRoute);
 app.use('/api/tour', TourRouter);

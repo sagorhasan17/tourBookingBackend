@@ -1,10 +1,11 @@
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
 
 import { UserModel } from '../user/user.model.js';
 
-
-const CreateAuthService = async (payLoad: { userId: string; password: string }) => {
-
+const CreateAuthService = async (payLoad: {
+  userId: string;
+  password: string;
+}) => {
   const { userId, password } = payLoad;
 
   //Is user already exists?
@@ -29,20 +30,18 @@ const CreateAuthService = async (payLoad: { userId: string; password: string }) 
     },
     process.env.JWT_SECRET || 'default_secret',
     { expiresIn: '3d' }
-  )
+  );
 
   //return token
   return {
     token,
     user: {
       userId: user.userId,
-      role: user.role
-    }
-  }
-
-
-}
+      role: user.role,
+    },
+  };
+};
 
 export const AuthService = {
-  CreateAuthService
-}
+  CreateAuthService,
+};
