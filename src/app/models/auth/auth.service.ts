@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-
 import { UserModel } from '../user/user.model.js';
 
 const CreateAuthService = async (payLoad: {
